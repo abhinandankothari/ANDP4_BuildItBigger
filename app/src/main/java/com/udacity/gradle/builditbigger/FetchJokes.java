@@ -1,7 +1,6 @@
 package com.udacity.gradle.builditbigger;
 
 import android.os.AsyncTask;
-import android.util.Log;
 
 import com.abhinandankothair.jokesbackend.myApi.MyApi;
 import com.google.api.client.extensions.android.http.AndroidHttp;
