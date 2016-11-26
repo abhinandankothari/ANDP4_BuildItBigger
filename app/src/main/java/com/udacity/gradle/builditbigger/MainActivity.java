@@ -1,8 +1,10 @@
 package com.udacity.gradle.builditbigger;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Pair;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -39,6 +41,7 @@ public class MainActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            new FetchJokes().execute(new Pair<Context, String>(this, "Manfred"));
             return true;
         }
 
@@ -46,7 +49,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void tellJoke(View view) {
-        Toast.makeText(this, jokesClient.joke(), Toast.LENGTH_SHORT).show();
+
         Intent intent = new Intent(this, DisplayJokeActivity.class);
         intent.putExtra(JOKE,jokesClient.joke());
         startActivity(intent);

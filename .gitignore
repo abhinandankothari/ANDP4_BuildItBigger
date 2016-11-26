@@ -4,8 +4,10 @@
 /.idea/libraries
 .DS_Store
 /build
+/jokesbackend/build
 /captures
 .idea
 .idea/*
 *.iml
 *.bat
+
