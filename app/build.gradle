@@ -18,6 +18,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    productFlavors{
+        free {
+            applicationIdSuffix ".free"
+        }
+        paid {
+            applicationIdSuffix ".paid"
+        }
+
+    }
 }
 
 dependencies {
@@ -27,7 +36,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:25.0.1'
-    compile 'com.google.android.gms:play-services-ads:9.8.0'
+    freeCompile 'com.google.android.gms:play-services-ads:9.8.0'
     compile 'com.google.code.findbugs:jsr305:2.0.1'
     compile project(path: ':jokesbackend', configuration: 'android-endpoints')
 }
